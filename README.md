@@ -36,7 +36,7 @@ Most small businesses find out their website is down the worst possible way — 
 
 1. The timer fires every 5 minutes (`0 */5 * * * *`) and runs `check_website`.
 2. The function calls the target URL with a 10-second timeout.
-3. On a `FAIL` or `SLOW` result it writes the row to Table Storage **and** calls `logging.error("SITE DOWN: …")`.
+3. Every check writes a row to Table Storage; on a `FAIL` or `SLOW` result the function **also** calls `logging.error("SITE DOWN: …")`.
 4. Application Insights records the trace in `AppTraces` with severity level 3 (Error).
 5. Log Analytics ingests the trace, typically within 1–2 minutes.
 6. The alert rule's KQL query finds the `SITE DOWN` message on its 5-minute evaluation and fires.
