@@ -1,20 +1,19 @@
-terraform.tfvars
+# Terraform
 *.tfvars
+!terraform.tfvars.example
 .terraform/
 .terraform.lock.hcl
 *.tfstate
-*.tfstate.backup
+*.tfstate.*
 *.tfplan
+
+# Python / Functions
 __pycache__/
 *.pyc
-.python_packages/
-function_deploy.zip
-deploy_temp/
-.terraform/
-*.tfstate
-*.tfstate.*
-*.tfvars
 .venv/
-__pycache__/
-*.zip
+.python_packages/
 local.settings.json
+
+# Build artifacts
+*.zip
+deploy_temp/

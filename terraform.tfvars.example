@@ -1,0 +1,5 @@
+yourname    = "<your-lowercase-name>"
+location    = "East US"
+target_url  = "https://example.com"
+alert_email = "<you@example.com>"
+alert_phone = "+14045550100"
